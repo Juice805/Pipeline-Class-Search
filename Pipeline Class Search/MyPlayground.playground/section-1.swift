@@ -26,8 +26,7 @@ NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQue
         println(html)
     }
     
-    var test = html.rangeOfString("html")?.startIndex
-
+    var test = html.rangeOfString("id=\"term\"")?.startIndex
 }
 
 println(html)

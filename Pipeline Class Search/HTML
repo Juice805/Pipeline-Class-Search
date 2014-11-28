@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course Search</title>
+
+<link rel="stylesheet" href="/mobile/themes/current/jquery.mobile.min.css" />
+<link rel="stylesheet" href="/mobile/sbccadd.css" />
+<script src="/mobile/themes/current/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).bind("mobileinit", function()
+{
+$.extend(  $.mobile , {
+ajaxFormsEnabled: false
+});
+
+
+});
+
+//$( document ).delegate("#one", "pagebeforecreate", function() {
+
+//if (screen.width>=801) {
+//$('ul').prepend('<li data-icon="checkbox-off" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-btn-up-c"  role="option" value="%" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="c" aria-selected="false"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="#" tabindex="-1" class="ui-link-inherit">All</a></div><span class="ui-icon ui-icon-checkbox-off ui-icon-shadow">&nbsp;</span></div></li>');
+//$('select[name=subj]').prepend('<option value="%">All</option>');
+//}
+
+
+
+//});
+
+
+
+//$(document).on('pagebeforeshow', '#one', function(){
+
+//$('#overlay').fadeOut('slow', function () {
+
+//  $(this).remove();
+// }); //fadeout
+
+//});
+-->
+</script>
+<script src="/mobile/themes/current/jquery.mobile.min.js"></script>
+<link rel="stylesheet" href="/mobile/themes/jqm-icon-pack-2.0-original.css" />
+<script src="/mobile/forms/jquery_val/jquery-validation-1.11.1/lib/jquery.js"></script>
+<script src="/mobile/forms/jquery_val/jquery-validation-1.11.1/jquery.validate.js"></script>
+
+<!--
+<script>
+$(document).ready(function(){
+
+$( "#offslider" ).on( 'slidestop', function( event ) {
+offslide = $("#offslider").val();
+onslide = $("#onslider").val();
+//alert(test);
+
+if(offslide=="Y" && onslide=="Y") {
+//alert(offslide)
+$("#onslider").val("N");
+$("#onslider").slider('refresh');
+//alert(onslide)
+}
+
+});
+
+$( "#onslider" ).on( 'slidestop', function( event ) {
+offslide = $("#offslider").val();
+onslide = $("#onslider").val();
+//alert(test);
+
+if(offslide=="Y" && onslide=="Y") {
+//alert(offslide)
+$("#offslider").val("N");
+$("#offslider").slider('refresh');
+//alert(onslide)
+}
+
+});
+
+});
+</script>
+-->
+
+<script>
+$(document).ready(function() {
+
+$('#feeds').load('/admissions/common_problems.php #closed');
+});
+
+</script>
+<script>
+<!-- Hide JavaScript from older browsers
+//  Function to open a window
+function winOpen(window_url) {
+helpWin = window.open(window_url,'','toolbar=no,status=no,scrollbars=yes,menubar=no,resizable=yes,directories=no,location=no,width=700,height=550,top=50,left=200');
+}
+
+function unavailableLink() {
+alert("\nSorry, this option not yet available. Please Try Again.");
+}
+//  End script hiding -->
+</script>
+<style>
+.ui-bar-a{
+background-color: #c0131e; background-image: none;}
+
+</style>
+</head>
+<body>
+<div data-role="page" id="one">
+<div data-role="header">
+
+
+<div id="top">
+<a href="/mobile/" data-ajax="false"><img src="/mobile/images/mobile_top.png" alt="Santa Barbara City College"  /></a>
+
+
+</div>
+<!-- /top -->
+</div><!-- /header -->
+
+
+<div data-role="content">
+<h3>SBCC Course Search</h3>
+<form action="schedule.php" method="GET"  id="searchform" data-ajax="false">
+
+<div data-role="fieldcontain">
+<label for="term" class="select">Term:</label><br>
+<select NAME="term"  id="term" >
+<option value="201550,Spring 2015" >Spring 2015</option><option value="201530,Fall 2014" >Fall 2014</option>
+
+</select>
+
+
+</div>
+<div data-role="fieldcontain">
+<label for="subj" class="select">*Subject:</label><br>
+<SELECT NAME="subj"  id="subj"   data-native-menu="false" required>
+<option value="" data-placeholder="true">Choose subject</option>
+<option value="ABE" >ABE - Adult Basic Education</option><option value="ACCT" >ACCT - Accounting</option><option value="ADC" >ADC - Alcohol and Drug Counseling</option><option value="AH" >AH - Allied Health (HCI, Med. Term)</option><option value="AJ" >AJ - Justice Studies</option><option value="AJP" >AJP - Administration of Justice POST</option><option value="ANTH" >ANTH - Anthropology</option><option value="ARBC" >ARBC - Arabic</option><option value="ART" >ART - Art</option><option value="ASAM" >ASAM - Asian-American Studies</option><option value="ASL" >ASL - American Sign Language</option><option value="AUTO" >AUTO - Automotive Service & Technolog</option><option value="BIOL" >BIOL - Biology</option><option value="BLAW" >BLAW - Business Law</option><option value="BLST" >BLST - Black Studies</option><option value="BMS" >BMS - Bio-medical Sciences</option><option value="BOT" >BOT - Botany</option><option value="BUS" >BUS - Business Administration</option><option value="CA" >CA - Culinary Arts</option><option value="CHEM" >CHEM - Chemistry</option><option value="CHIN" >CHIN - Chinese</option><option value="CHST" >CHST - Chicano Studies</option><option value="CIM" >CIM - Cancer Information Mgmt</option><option value="CIS" >CIS - Computer Information Systems</option><option value="CNA" >CNA - Certified Nursing Assistant</option><option value="CNEE" >CNEE - Computer Network Engineering</option><option value="COMM" >COMM - Communication</option><option value="COMP" >COMP - Computer Appl/Office Mgmt</option><option value="CS" >CS - Computer Science</option><option value="CSMT" >CSMT - Cosmetology</option><option value="CT" >CT - Construction Technology</option><option value="DMS" >DMS - Diagnostic Medical Sonography</option><option value="DRFT" >DRFT - Drafting/CAD</option><option value="DSPS" >DSPS - Disabled Student Services</option><option value="ECE" >ECE - Early Childhood Education</option><option value="ECON" >ECON - Economics</option><option value="ED" >ED - Education</option><option value="EH" >EH - Environmental Horticulture</option><option value="EHR" >EHR - Electronic Health Records</option><option value="EMT" >EMT - Emergency Medical Tech</option><option value="ENG" >ENG - English, Composition & Literat</option><option value="ENGR" >ENGR - Engineering</option><option value="ENT" >ENT - Entrepreneurship</option><option value="ENVS" >ENVS - Environmental Studies</option><option value="ERTH" >ERTH - Earth and Planetary Sciences</option><option value="ESL" >ESL - English as a Second Language</option><option value="ESLV" >ESLV - English as a Second Lang Voca</option><option value="ETHS" >ETHS - American Ethnic Studies</option><option value="EXBT" >EXBT - Exhibit and Display Design</option><option value="FILM" >FILM - Film and Television Production</option><option value="FIN" >FIN - Finance</option><option value="FP" >FP - Film and Television Production</option><option value="FR" >FR - French</option><option value="FS" >FS - Film Studies</option><option value="FT" >FT - Fire Technology</option><option value="GDP" >GDP - Graphic Design & Photography</option><option value="GED" >GED - General Education Development</option><option value="GEDB" >GEDB - General Ed Dev Bilingual</option><option value="GEOG" >GEOG - Geography</option><option value="GER" >GER - German</option><option value="GERO" >GERO - Gerontology</option><option value="GLST" >GLST - Global Studies</option><option value="HE" >HE - Health Education</option><option value="HEBR" >HEBR - Hebrew</option><option value="HIST" >HIST - History</option><option value="HIT" >HIT - Health Information Technology</option><option value="HM" >HM - Hotel Management</option><option value="HNRS" >HNRS - Honors</option><option value="HRC" >HRC - Hotel Restaurant Culinary</option><option value="HSBI" >HSBI - Adult High School Biology</option><option value="HSCA" >HSCA - Adult High School Comp Apps</option><option value="HSEA" >HSEA - Adult High School Earth</option><option value="HSEC" >HSEC - Adult High School Economics</option><option value="HSEN" >HSEN - Adult HIgh School English</option><option value="HSHE" >HSHE - Adult High School Health Ed</option><option value="HSHI" >HSHI - Adult High School History</option><option value="HSMA" >HSMA - Adult High School Math</option><option value="HSPD" >HSPD - Adult High School Personal Dev</option><option value="HSPS" >HSPS - Adult High School Poli Sci</option><option value="HSVA" >HSVA - Adult High School Vis Design</option><option value="HT" >HT - Health Technology</option><option value="IBUS" >IBUS - International Business</option><option value="ID" >ID - Interior Design</option><option value="INDS" >INDS - Adult High School Ind Studies</option><option value="INST" >INST - International Studies</option><option value="IS" >IS - Interdisciplinary Studies</option><option value="ITAL" >ITAL - Italian</option><option value="JAPN" >JAPN - Japanese</option><option value="JOUR" >JOUR - Journalism</option><option value="KOR" >KOR - Korean</option><option value="LATN" >LATN - Latin</option><option value="LIBR" >LIBR - Library</option><option value="LS" >LS - Learning Support</option><option value="MAT" >MAT - Multimedia Arts & Technologies</option><option value="MATH" >MATH - Mathematics</option><option value="MDT" >MDT - Marine Diving Technologies</option><option value="MGMT" >MGMT - Management</option><option value="MKT" >MKT - Marketing</option><option value="MUS" >MUS - Music</option><option value="NATA" >NATA - Native American Studies</option><option value="NURS" >NURS - Nursing</option><option value="PD" >PD - Personal Development</option><option value="PE" >PE - Physical Education/Dance/Athl</option><option value="PHIL" >PHIL - Philosophy</option><option value="PHOT" >PHOT - Photography</option><option value="PHSC" >PHSC - Physical Science</option><option value="PHYS" >PHYS - Physics</option><option value="POLS" >POLS - Political Science</option><option value="PRO" >PRO - Professional Development</option><option value="PSY" >PSY - Psychology</option><option value="RE" >RE - Real Estate</option><option value="REC" >REC - Recreation</option><option value="RT" >RT - Radiologic & Imaging Sciences</option><option value="SOC" >SOC - Sociology</option><option value="SPAN" >SPAN - Spanish</option><option value="SS" >SS - Social Science</option><option value="STEM" >STEM - Science Technology ENG & MATH</option><option value="SUPV" >SUPV - Supervision</option><option value="TA" >TA - Theatre Arts</option><option value="TUT" >TUT - Tutoring</option><option value="VN" >VN - Vocational Nursing</option><option value="WEXP" >WEXP - Work Experience</option><option value="WTRS" >WTRS - Water Science</option><option value="ZOOL" >ZOOL - Zoology</option>					</SELECT>
+</div>
+<div data-role="fieldcontain">
+
+<label for="slider1">Open Classes Only:</label>
+
+
+<select name="status" id="slider1" data-role="slider">
+<option value="N">No</option>
+<option value="Y" selected>Yes</option>
+</select>
+
+
+</div>
+<div data-role="fieldcontain">
+
+<label for="slider2">Online Classes Only:</label>
+
+<select name="im" id="slider2" data-role="slider">
+<option value="N">No</option>
+<option value="Y">Yes</option>
+</select>
+
+
+</div>
+<!-- removed at request of Dan W-- see notation at top of schedule.php
+<div data-role="fieldcontain">
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<label for="oc-0">Off Campus Classes Only:</label>
+</div>
+<div class="ui-block-b">
+<select name="oc" id="offslider" data-role="slider">
+<option value="N">No</option>
+<option value="Y">Yes</option>
+</select>
+</div>
+</div>
+</div>
+<div data-role="fieldcontain">
+<div class="ui-grid-a">
+<div class="ui-block-a">
+<label for="onc-0">On Campus Classes Only:</label>
+</div>
+<div class="ui-block-b">
+<select name="onc" id="onslider" data-role="slider">
+<option value="N" "selected">No</option>
+<option value="Y">Yes</option>
+</select>
+</div>
+</div>
+</div>
+-->
+<div data-role="fieldcontain">
+
+<fieldset class="ui-grid-a">
+<div class="ui-block-a">
+<INPUT TYPE="submit" VALUE="Search" title="submit">
+</div>
+<div class="ui-block-b">
+<INPUT TYPE="reset" VALUE="Reset" title="reset">
+</div>
+
+</fieldset>
+
+
+</div>
+</form>
+<script>
+
+$("#searchform").validate({
+focusInvalid: false
+});
+</script>
+</div><!-- /content -->
+
+<!--footer--><div data-role="footer" data-position="fixed" ><div data-role="navbar"data-iconpos="bottom"><ul>
+<li><a href=""   data-theme="c"   data-ajax="false" onClick="javascript:history.back();">Back</a> </li>
+<li><a href="/mobile/"  data-ajax="false" data-role="navbar"  data-theme="c"
+data-direction="reverse">Home</a></li>
+<li><a href="feedback.php"  data-ajax="false"   data-role="navbar"  data-theme="c" >Feedback</a></li>
+
+<li ><a href="/classes/" data-ajax="false" data-role="navbar" data-transition="none"  data-theme="c">Desktop</a></li> </ul></div> <!--/footer-->
+
+</div><!-- /page -->
+
+
+<!-- START: GOOGLE Analytics Tracking - Brandon Lovelace -->
+<script type="text/javascript">// <![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+// ]]></script>
+<script type="text/javascript">// <![CDATA[
+var pageTracker = _gat._getTracker("UA-5667493-1");
+pageTracker._trackPageview();
+// ]]></script>
+<!-- END: GOOGLE Analytics Tracking - Brandon Lovelace -->
+</body>
+</html>
+

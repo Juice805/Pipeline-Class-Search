@@ -8,37 +8,159 @@
 
 import UIKit
 
-class courselisting: NSObject {
+class courselisting {
     var subjects: [String] = []
     var semesters: [String] = []
+    var semesterNum: [String] = []
+    var semesterNumDict = Dictionary<String, String>()
 }
-
-
-let url = NSURL(string: "http://www.sbcc.edu/mobile/schedule/")
 
 // class begin
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let url = NSURL(string: "http://www.sbcc.edu/mobile/schedule/");
-    var html = String()
+    @IBOutlet weak var picker: UIPickerView!
     var sbcc = courselisting();
+    var html = "No Info Received"
+    var searchEnabled = false;
+    
+    @IBOutlet weak var openClassesOnly: UISwitch!
+    @IBOutlet weak var onlineClassesOnly: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                println(self.html)
+        grabHTML("http://www.sbcc.edu/mobile/schedule/")
         
-        getSource(url!);
-        
-        sbcc.subjects.append("Computer Science")
-        sbcc.semesters.append("Summer 2014")
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func grabHTML(site: String){
+        var info = String();
+        
+        sbcc.semesters.append("Loading")
+        sbcc.subjects.append("Please Wait")
 
+        
+        getHTML(site, info: info) {
+            responseString, error in
+            
+            if responseString == nil {
+                println("Error during post: \(error)") // ADD ALERT HERE
+                
+                // Create the alert controller
+                var alertController = UIAlertController(title: "Whoops!", message: "Check internet connection", preferredStyle: .Alert)
+                
+                // Create the actions
+                var reloadAction = UIAlertAction(title: "Reload", style: UIAlertActionStyle.Default) {
+                    UIAlertAction in
+                    println("Reload Pressed")
+                    self.grabHTML(site)
+                    return
+                }
+                
+                // Add the actions
+                alertController.addAction(reloadAction)
+                
+                // Present the controller
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // use responseString here
+                self.html=responseString
+                self.sbcc.subjects.removeAll()
+                self.sbcc.semesters.removeAll()
+                self.parse()
+                self.picker.reloadAllComponents()
+                self.searchEnabled=true;
+            }
+        }
+
+    }
+
+    
+    func getHTML(url: String, info: String, completionHandler: (responseString: NSString!, error: NSError!) -> ()) {
+        var URL: NSURL = NSURL(string: url)!
+        var request:NSMutableURLRequest = NSMutableURLRequest(URL:URL)
+        request.HTTPMethod = "POST";
+        var bodyData = info;
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){
+            
+            response, data, error in
+            
+            var output: NSString!
+            
+            if data != nil {
+                output = NSString(data: data, encoding: NSUTF8StringEncoding)
+            }
+            
+            completionHandler(responseString: output, error: error)
+        }
+    }
+    
+    func parse() {
+        
+        //grab semesters
+        var start = html.rangeOfString("<select NAME=\"term\"  id=\"term\"")?.startIndex
+        var end = html.rangeOfString("</select>")?.endIndex
+        var termHTML = html.substringToIndex(end!)
+        termHTML = termHTML.substringFromIndex(start!)
+        
+        var remainingHTML = html.substringFromIndex(end!)
+
+        
+        start = remainingHTML.rangeOfString("<SELECT NAME=\"subj\"  id=\"subj\"")?.startIndex
+        end = remainingHTML.rangeOfString("</SELECT>")?.endIndex
+        var subjHTML = remainingHTML.substringToIndex(end!)
+        subjHTML = subjHTML.substringFromIndex(start!)
+        
+        var term, termNum: String;
+        while (termHTML.rangeOfString("<option value=\"") != nil) {
+            end = termHTML.rangeOfString(",")?.startIndex
+            termNum = termHTML.substringToIndex(end!)
+            start = termNum.rangeOfString("<option value=\"")?.endIndex
+            termNum = termNum.substringFromIndex(start!)
+            
+            termHTML = termHTML.substringFromIndex(end!) //cuts off earlier html
+            
+            end = termHTML.rangeOfString("\"")?.startIndex
+            term = termHTML.substringToIndex(end!)
+            start = termHTML.rangeOfString(",")?.endIndex
+            term = term.substringFromIndex(start!)
+            
+            termHTML = termHTML.substringFromIndex(end!) //cuts off earlier html
+
+            self.sbcc.semesterNum.append(termNum)
+            self.sbcc.semesterNumDict[term]=termNum
+            self.sbcc.semesters.append(term)
+
+
+        }
+        
+        var subj, subjNum: String
+        start = subjHTML.rangeOfString("<option value=\"A")?.startIndex  // starts after the placeholder
+        subjHTML = subjHTML.substringFromIndex(start!)
+        
+        while (subjHTML.rangeOfString("<option value=\"") != nil) {
+            end = subjHTML.rangeOfString("\" >")?.startIndex
+            subjNum = subjHTML.substringToIndex(end!)
+            start = subjNum.rangeOfString("<option value=\"")?.endIndex
+            subjNum = subjNum.substringFromIndex(start!)
+           
+            end = subjHTML.rangeOfString("\" >")?.endIndex
+            subjHTML = subjHTML.substringFromIndex(end!) //cuts off earlier html
+
+            self.sbcc.subjects.append(subjNum)
+        }
+        
+        //html.substringToIndex()
+    }
+    
     
     // PICKER VIEW FUNCTIONS
     // returns the number of 'columns' to display.
@@ -59,9 +181,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         if (component == 0) {
-            return 100.0
-        } else {
             return 200.0
+        } else {
+            return 100.0
         }
     }
     
@@ -73,43 +195,49 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    /*func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        var test = NSAttributedString()
-        return test
-    }*/
-
-    
-    func parse(html: String) {
-        sbcc.subjects.append("Test")
-        sbcc.subjects.append(html.substringToIndex(advance(html.startIndex, 2)))
-        println(self.html)
-    }
-    
     func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
-        println("reloading")
+        var info = String();
+        println("ALert Pressed")
+
+        getHTML("http://www.sbcc.edu/mobile/schedule/", info: info) {
+            responseString, error in
+            
+            if responseString == nil {
+                println("Error during post: \(error)") // ADD ALERT HERE
+                return
+            }
+            // use responseString here
+            self.html=responseString
+            self.sbcc.subjects.removeAll()
+            self.sbcc.semesters.removeAll()
+            self.parse()
+            self.picker.reloadAllComponents()
+            
+        }
     }
     
-    func getSource(url: NSURL){
-        let request = NSURLRequest(URL: url)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+    // SEGUE
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "search"{
+            let listView = segue.destinationViewController as ClassListController
+            var searchTerm = pickerView(picker, titleForRow: picker.selectedRowInComponent(0), forComponent: 0)
+            var searchSubj = pickerView(picker, titleForRow: picker.selectedRowInComponent(1), forComponent: 1)
+            var online: Character
+            if (onlineClassesOnly.on) {
+                online = "Y"
+            } else {online = "N"}
             
-            if (error != nil) {
-                println("whoops, something went wrong")
-                
-                let alert : UIAlertView = UIAlertView(title: "Oops!", message: "Something went wrong",       delegate: nil, cancelButtonTitle: "Reload")
-                
-                alert.show()
-                
-            } else {
-                //println(self.html)
-                self.html = NSString(data: data, encoding: NSUTF8StringEncoding)!
-                self.parse(self.html);
-                
-                
-            }
+            var open: Character
+            if (openClassesOnly.on) {
+                open = "Y"
+            } else {open = "N"}
+            
+            listView.url = "http://www.sbcc.edu/mobile/schedule/schedule.php?term=\(self.sbcc.semesterNumDict[searchTerm]!)%2C\(searchTerm)&subj=\(searchSubj)&status=\(open)&im=\(online)"
+            listView.subject = searchSubj
+            
+            listView.url.replaceRange(listView.url.rangeOfString(" ")!, with: "%20")
+            println(listView.url)
+            
         }
-        
     }
 }
-
