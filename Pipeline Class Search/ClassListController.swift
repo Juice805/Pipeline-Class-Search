@@ -143,9 +143,7 @@ class ClassListController: UITableViewController {
                 subject = fullCourse.substringToIndex(end!)
                 start = fullCourse.rangeOfString(" - ")?.endIndex
                 fullCourse = fullCourse.substringFromIndex(start!)
-                
-                //println(subject)
-                //println(fullCourse)
+            
                 
                 course = String()
                 while (fullCourse.rangeOfString(" ")? != nil) { //stops before the final word, which is the course number
