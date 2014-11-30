@@ -8,8 +8,16 @@
 
 import UIKit
 
+class classCell: UITableViewCell {
+    //
+    @IBOutlet weak var moreInfo: UIButton!
+    @IBOutlet weak var CRN: UILabel!
+}
+
 class ClassListController: UITableViewController {
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
     var url = String()
     var html = String()
     var subject = String()
@@ -23,6 +31,7 @@ class ClassListController: UITableViewController {
         
         grabHTML(self.url)
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +40,11 @@ class ClassListController: UITableViewController {
     }
     
     func grabHTML(site: String) {
+        self.loadingIndicator.hidden=false;
         var info = String();
 
         getHTML(site, info: info) {
+            
             responseString, error in
             
             if responseString == nil {
@@ -55,6 +66,7 @@ class ClassListController: UITableViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
                 return
             } else {
+                self.loadingIndicator.hidden=true
                 // use responseString here
                 self.html=responseString
                 self.parse()
@@ -162,9 +174,14 @@ class ClassListController: UITableViewController {
                     
                     trim(&remainingHTML, after: "</li>")
                     
-
-                    courses.append(crseNumber)
-                    courses.sort(<)
+                    if (courses.count == 0) {
+                        courses.append(crseNumber)
+                    }else if (courses[courses.count-1] != crseNumber){
+                        courses.append(crseNumber)
+                        courses.sort(<)
+                    }
+                    
+                    
                     
                     if (listing[crseNumber] == nil) {
                         listing[crseNumber] = Dictionary<String, String>()
@@ -174,6 +191,7 @@ class ClassListController: UITableViewController {
                     
 
                     listing[crseNumber]![CRN] = status
+                    
                     
                     println(CRN + " - " + status)
                     //listing[fullCourse]![0] = [CRN, status]
@@ -212,22 +230,23 @@ class ClassListController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var courseNum = courses[section]
         var derp = listing[courseNum]!
-        return derp.count
+        return derp.count - 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        let cell = classCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        var courseNum = courses[indexPath.section]
+        var crn = listing[courseNum]?.keys.array[indexPath.row+1]
+        cell.textLabel.text = crn! + " - " + listing[courseNum]![crn!]!
         
-        cell.detailTextLabel?.text = "derp"
-        
-        
-        
-        
+        cell.moreInfo = UIButton();
+                
         return cell;
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var courseNum = courses[section]
         
-        return "Test"
+        return (self.subject + " \(courseNum) - " + listing[courseNum]!["title"]!)
     }
 }

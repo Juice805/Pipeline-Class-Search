@@ -65,7 +65,7 @@
                   symbolName = "Pipeline_Class_Search.ViewController.__deallocating_deinit"
                   moduleName = "Pipeline Class Search"
                   urlString = "file:///Users/Justin/Cloud/Dropbox/School/SBCC/CS%20187/Pipeline%20Class%20Search/Pipeline%20Class%20Search/ViewController.swift"
-                  timestampString = "438732136.593586"
+                  timestampString = "438984777.857012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -79,7 +79,7 @@
                   symbolName = "@objc Pipeline_Class_Search.ViewController.__ivar_destroyer"
                   moduleName = "Pipeline Class Search"
                   urlString = "file:///Users/Justin/Cloud/Dropbox/School/SBCC/CS%20187/Pipeline%20Class%20Search/Pipeline%20Class%20Search/ViewController.swift"
-                  timestampString = "438732136.593755"
+                  timestampString = "438984777.857169"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -96,7 +96,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "parse()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "parse()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -112,27 +144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "parse()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "parse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,11 +160,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "parse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -160,43 +176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "parse()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "parse()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "parse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -208,11 +192,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731467.401211"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "parse()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "numberOfSectionsInTableView(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -224,12 +224,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pipeline Class Search/ClassListController.swift"
-            timestampString = "438731992.275138"
+            timestampString = "438956513.34358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "tableView(_:titleForHeaderInSection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "tableView(_:titleForHeaderInSection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pipeline Class Search/ClassListController.swift"
+            timestampString = "438956513.34358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
