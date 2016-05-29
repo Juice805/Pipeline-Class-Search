@@ -62,7 +62,7 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
                 // TODO: Alert
             }
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+            _ = NSString(data: data!, encoding: NSUTF8StringEncoding)!
             //print("responseString = \(responseString)")
             
             
