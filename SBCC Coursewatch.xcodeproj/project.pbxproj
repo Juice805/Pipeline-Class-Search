@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E4BC9B08C7DA685DCF805B2 /* Pods_SBCC_CoursewatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5E2FF972AE0F7FE5575334 /* Pods_SBCC_CoursewatchUITests.framework */; };
+		66A1FA9AEDA279EAD5148602 /* Pods_SBCC_Coursewatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0CF6BFDD2C9A6FF6FC3A44 /* Pods_SBCC_Coursewatch.framework */; };
+		7BBFCBA499B06CE6B1E0AE1E /* Pods_SBCC_CoursewatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AD0AAD346BF3E52AF61A7E /* Pods_SBCC_CoursewatchTests.framework */; };
+		D01FA5BE1CF592A50096170B /* SBCCSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FA5BD1CF592A50096170B /* SBCCSearch.swift */; };
+		D0849CE51CF0343000428495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0849CE41CF0343000428495 /* AppDelegate.swift */; };
+		D0849CE71CF0343000428495 /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0849CE61CF0343000428495 /* ClassListViewController.swift */; };
+		D0849CEC1CF0343000428495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0849CEA1CF0343000428495 /* Main.storyboard */; };
+		D0849CEE1CF0343000428495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0849CED1CF0343000428495 /* Assets.xcassets */; };
+		D0849CF11CF0343000428495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0849CEF1CF0343000428495 /* LaunchScreen.storyboard */; };
+		D0849CFC1CF0343000428495 /* SBCC_CoursewatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0849CFB1CF0343000428495 /* SBCC_CoursewatchTests.swift */; };
+		D0849D071CF0343000428495 /* SBCC_CoursewatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0849D061CF0343000428495 /* SBCC_CoursewatchUITests.swift */; };
+		D0849D161CF04C7100428495 /* hpple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0849D151CF04C7100428495 /* hpple.framework */; };
+		D0849D181CF0EB2200428495 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0849D171CF0EB2200428495 /* SearchViewController.swift */; };
+		D0AE0F2B1CF95D810095FC26 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE0F2A1CF95D810095FC26 /* LoadingTableViewCell.swift */; };
+		D0AE0F2E1CFAD10B0095FC26 /* SearchResultsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE0F2D1CFAD10B0095FC26 /* SearchResultsStruct.swift */; };
+		D0AE0F301CFAE4430095FC26 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE0F2F1CFAE4430095FC26 /* ClassTableViewCell.swift */; };
+		D0AE0F321CFB04730095FC26 /* savedCourses.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0AE0F311CFB04730095FC26 /* savedCourses.plist */; };
+		D0AE0F341CFB08C60095FC26 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE0F331CFB08C60095FC26 /* ClassDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0849CF81CF0343000428495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0849CD91CF0342F00428495 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0849CE01CF0343000428495;
+			remoteInfo = "SBCC Coursewatch";
+		};
+		D0849D031CF0343000428495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0849CD91CF0342F00428495 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0849CE01CF0343000428495;
+			remoteInfo = "SBCC Coursewatch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00AD0AAD346BF3E52AF61A7E /* Pods_SBCC_CoursewatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SBCC_CoursewatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34AFE0A22283CCF18BA7DFF6 /* Pods-SBCC Coursewatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC Coursewatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC Coursewatch/Pods-SBCC Coursewatch.debug.xcconfig"; sourceTree = "<group>"; };
+		44449F0EDE116034AAAD86AB /* Pods-SBCC CoursewatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC CoursewatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC CoursewatchUITests/Pods-SBCC CoursewatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5E6D4732D102DF3C2F9137FE /* Pods-SBCC Coursewatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC Coursewatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC Coursewatch/Pods-SBCC Coursewatch.release.xcconfig"; sourceTree = "<group>"; };
+		7A5E2FF972AE0F7FE5575334 /* Pods_SBCC_CoursewatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SBCC_CoursewatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		970A8CE7540DF5573AA74F2C /* Pods-SBCC CoursewatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC CoursewatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC CoursewatchUITests/Pods-SBCC CoursewatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D01FA5BD1CF592A50096170B /* SBCCSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBCCSearch.swift; sourceTree = "<group>"; };
+		D0849CE11CF0343000428495 /* SBCC Coursewatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SBCC Coursewatch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0849CE41CF0343000428495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0849CE61CF0343000428495 /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
+		D0849CEB1CF0343000428495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0849CED1CF0343000428495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0849CF01CF0343000428495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0849CF21CF0343000428495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0849CF71CF0343000428495 /* SBCC CoursewatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SBCC CoursewatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0849CFB1CF0343000428495 /* SBCC_CoursewatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBCC_CoursewatchTests.swift; sourceTree = "<group>"; };
+		D0849CFD1CF0343000428495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0849D021CF0343000428495 /* SBCC CoursewatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SBCC CoursewatchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0849D061CF0343000428495 /* SBCC_CoursewatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBCC_CoursewatchUITests.swift; sourceTree = "<group>"; };
+		D0849D081CF0343000428495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0849D141CF04A6C00428495 /* SBCC_Coursewatch-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SBCC_Coursewatch-Bridging-Header.h"; path = "SBCC Coursewatch/SBCC_Coursewatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0849D151CF04C7100428495 /* hpple.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = hpple.framework; path = "../../../Library/Developer/Xcode/DerivedData/SBCC_Coursewatch-fkwhwhmgnrcytkblnmvylybhxlyy/Build/Products/Debug-iphonesimulator/hpple/hpple.framework"; sourceTree = "<group>"; };
+		D0849D171CF0EB2200428495 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D0AE0F2A1CF95D810095FC26 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingTableViewCell.swift; path = ResultsCells/LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		D0AE0F2D1CFAD10B0095FC26 /* SearchResultsStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsStruct.swift; sourceTree = "<group>"; };
+		D0AE0F2F1CFAE4430095FC26 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
+		D0AE0F311CFB04730095FC26 /* savedCourses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = savedCourses.plist; sourceTree = "<group>"; };
+		D0AE0F331CFB08C60095FC26 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		DF0CF6BFDD2C9A6FF6FC3A44 /* Pods_SBCC_Coursewatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SBCC_Coursewatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0230C57CCAB88936983C18F /* Pods-SBCC CoursewatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC CoursewatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC CoursewatchTests/Pods-SBCC CoursewatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		EEE4FA5BF4ED06D8BFA6CED8 /* Pods-SBCC CoursewatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBCC CoursewatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBCC CoursewatchTests/Pods-SBCC CoursewatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0849CDE1CF0343000428495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0849D161CF04C7100428495 /* hpple.framework in Frameworks */,
+				66A1FA9AEDA279EAD5148602 /* Pods_SBCC_Coursewatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849CF41CF0343000428495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BBFCBA499B06CE6B1E0AE1E /* Pods_SBCC_CoursewatchTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849CFF1CF0343000428495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4BC9B08C7DA685DCF805B2 /* Pods_SBCC_CoursewatchUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FAA5B84503529BC689341D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0849D141CF04A6C00428495 /* SBCC_Coursewatch-Bridging-Header.h */,
+				D0849D151CF04C7100428495 /* hpple.framework */,
+				DF0CF6BFDD2C9A6FF6FC3A44 /* Pods_SBCC_Coursewatch.framework */,
+				00AD0AAD346BF3E52AF61A7E /* Pods_SBCC_CoursewatchTests.framework */,
+				7A5E2FF972AE0F7FE5575334 /* Pods_SBCC_CoursewatchUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B057567FABE11E0C790FECD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34AFE0A22283CCF18BA7DFF6 /* Pods-SBCC Coursewatch.debug.xcconfig */,
+				5E6D4732D102DF3C2F9137FE /* Pods-SBCC Coursewatch.release.xcconfig */,
+				EEE4FA5BF4ED06D8BFA6CED8 /* Pods-SBCC CoursewatchTests.debug.xcconfig */,
+				E0230C57CCAB88936983C18F /* Pods-SBCC CoursewatchTests.release.xcconfig */,
+				970A8CE7540DF5573AA74F2C /* Pods-SBCC CoursewatchUITests.debug.xcconfig */,
+				44449F0EDE116034AAAD86AB /* Pods-SBCC CoursewatchUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0849CD81CF0342F00428495 = {
+			isa = PBXGroup;
+			children = (
+				D0849CE31CF0343000428495 /* SBCC Coursewatch */,
+				D0849CFA1CF0343000428495 /* SBCC CoursewatchTests */,
+				D0849D051CF0343000428495 /* SBCC CoursewatchUITests */,
+				D0849CE21CF0343000428495 /* Products */,
+				B057567FABE11E0C790FECD8 /* Pods */,
+				2FAA5B84503529BC689341D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0849CE21CF0343000428495 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0849CE11CF0343000428495 /* SBCC Coursewatch.app */,
+				D0849CF71CF0343000428495 /* SBCC CoursewatchTests.xctest */,
+				D0849D021CF0343000428495 /* SBCC CoursewatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0849CE31CF0343000428495 /* SBCC Coursewatch */ = {
+			isa = PBXGroup;
+			children = (
+				D0849CE41CF0343000428495 /* AppDelegate.swift */,
+				D0849CEA1CF0343000428495 /* Main.storyboard */,
+				D0849D171CF0EB2200428495 /* SearchViewController.swift */,
+				D01FA5BD1CF592A50096170B /* SBCCSearch.swift */,
+				D0849CE61CF0343000428495 /* ClassListViewController.swift */,
+				D0AE0F2D1CFAD10B0095FC26 /* SearchResultsStruct.swift */,
+				D0AE0F331CFB08C60095FC26 /* ClassDetailViewController.swift */,
+				D0AE0F2C1CF95D9C0095FC26 /* ResultsCells */,
+				D0849CED1CF0343000428495 /* Assets.xcassets */,
+				D0849CEF1CF0343000428495 /* LaunchScreen.storyboard */,
+				D0AE0F311CFB04730095FC26 /* savedCourses.plist */,
+				D0849CF21CF0343000428495 /* Info.plist */,
+			);
+			path = "SBCC Coursewatch";
+			sourceTree = "<group>";
+		};
+		D0849CFA1CF0343000428495 /* SBCC CoursewatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0849CFB1CF0343000428495 /* SBCC_CoursewatchTests.swift */,
+				D0849CFD1CF0343000428495 /* Info.plist */,
+			);
+			path = "SBCC CoursewatchTests";
+			sourceTree = "<group>";
+		};
+		D0849D051CF0343000428495 /* SBCC CoursewatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0849D061CF0343000428495 /* SBCC_CoursewatchUITests.swift */,
+				D0849D081CF0343000428495 /* Info.plist */,
+			);
+			path = "SBCC CoursewatchUITests";
+			sourceTree = "<group>";
+		};
+		D0AE0F2C1CF95D9C0095FC26 /* ResultsCells */ = {
+			isa = PBXGroup;
+			children = (
+				D0AE0F2A1CF95D810095FC26 /* LoadingTableViewCell.swift */,
+				D0AE0F2F1CFAE4430095FC26 /* ClassTableViewCell.swift */,
+			);
+			name = ResultsCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0849CE01CF0343000428495 /* SBCC Coursewatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0849D0B1CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC Coursewatch" */;
+			buildPhases = (
+				CB17C3F210C79347BF594DC4 /* 📦 Check Pods Manifest.lock */,
+				D0849CDD1CF0343000428495 /* Sources */,
+				D0849CDE1CF0343000428495 /* Frameworks */,
+				D0849CDF1CF0343000428495 /* Resources */,
+				CF3414446296104EBA6014FD /* 📦 Embed Pods Frameworks */,
+				33E6F703A7968543E978FDBF /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SBCC Coursewatch";
+			productName = "SBCC Coursewatch";
+			productReference = D0849CE11CF0343000428495 /* SBCC Coursewatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0849CF61CF0343000428495 /* SBCC CoursewatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0849D0E1CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC CoursewatchTests" */;
+			buildPhases = (
+				0677640746655202545AFA93 /* 📦 Check Pods Manifest.lock */,
+				D0849CF31CF0343000428495 /* Sources */,
+				D0849CF41CF0343000428495 /* Frameworks */,
+				D0849CF51CF0343000428495 /* Resources */,
+				7CA3BC72C267BA4600228704 /* 📦 Embed Pods Frameworks */,
+				EA490F0391FC5E2CD309FBA4 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0849CF91CF0343000428495 /* PBXTargetDependency */,
+			);
+			name = "SBCC CoursewatchTests";
+			productName = "SBCC CoursewatchTests";
+			productReference = D0849CF71CF0343000428495 /* SBCC CoursewatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0849D011CF0343000428495 /* SBCC CoursewatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0849D111CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC CoursewatchUITests" */;
+			buildPhases = (
+				A2A9FAB637E4224D45A2589F /* 📦 Check Pods Manifest.lock */,
+				D0849CFE1CF0343000428495 /* Sources */,
+				D0849CFF1CF0343000428495 /* Frameworks */,
+				D0849D001CF0343000428495 /* Resources */,
+				2F83AFC0B44FAF042E96A338 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0849D041CF0343000428495 /* PBXTargetDependency */,
+			);
+			name = "SBCC CoursewatchUITests";
+			productName = "SBCC CoursewatchUITests";
+			productReference = D0849D021CF0343000428495 /* SBCC CoursewatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0849CD91CF0342F00428495 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Justin Oroz";
+				TargetAttributes = {
+					D0849CE01CF0343000428495 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D0849CF61CF0343000428495 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D0849CE01CF0343000428495;
+					};
+					D0849D011CF0343000428495 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D0849CE01CF0343000428495;
+					};
+				};
+			};
+			buildConfigurationList = D0849CDC1CF0342F00428495 /* Build configuration list for PBXProject "SBCC Coursewatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0849CD81CF0342F00428495;
+			productRefGroup = D0849CE21CF0343000428495 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0849CE01CF0343000428495 /* SBCC Coursewatch */,
+				D0849CF61CF0343000428495 /* SBCC CoursewatchTests */,
+				D0849D011CF0343000428495 /* SBCC CoursewatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0849CDF1CF0343000428495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0849CF11CF0343000428495 /* LaunchScreen.storyboard in Resources */,
+				D0849CEE1CF0343000428495 /* Assets.xcassets in Resources */,
+				D0849CEC1CF0343000428495 /* Main.storyboard in Resources */,
+				D0AE0F321CFB04730095FC26 /* savedCourses.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849CF51CF0343000428495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849D001CF0343000428495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0677640746655202545AFA93 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F83AFC0B44FAF042E96A338 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBCC CoursewatchUITests/Pods-SBCC CoursewatchUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33E6F703A7968543E978FDBF /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBCC Coursewatch/Pods-SBCC Coursewatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CA3BC72C267BA4600228704 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBCC CoursewatchTests/Pods-SBCC CoursewatchTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2A9FAB637E4224D45A2589F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB17C3F210C79347BF594DC4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF3414446296104EBA6014FD /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBCC Coursewatch/Pods-SBCC Coursewatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA490F0391FC5E2CD309FBA4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBCC CoursewatchTests/Pods-SBCC CoursewatchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0849CDD1CF0343000428495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0AE0F2B1CF95D810095FC26 /* LoadingTableViewCell.swift in Sources */,
+				D0AE0F2E1CFAD10B0095FC26 /* SearchResultsStruct.swift in Sources */,
+				D0AE0F341CFB08C60095FC26 /* ClassDetailViewController.swift in Sources */,
+				D0849CE51CF0343000428495 /* AppDelegate.swift in Sources */,
+				D0849D181CF0EB2200428495 /* SearchViewController.swift in Sources */,
+				D0AE0F301CFAE4430095FC26 /* ClassTableViewCell.swift in Sources */,
+				D0849CE71CF0343000428495 /* ClassListViewController.swift in Sources */,
+				D01FA5BE1CF592A50096170B /* SBCCSearch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849CF31CF0343000428495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0849CFC1CF0343000428495 /* SBCC_CoursewatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0849CFE1CF0343000428495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0849D071CF0343000428495 /* SBCC_CoursewatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0849CF91CF0343000428495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0849CE01CF0343000428495 /* SBCC Coursewatch */;
+			targetProxy = D0849CF81CF0343000428495 /* PBXContainerItemProxy */;
+		};
+		D0849D041CF0343000428495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0849CE01CF0343000428495 /* SBCC Coursewatch */;
+			targetProxy = D0849D031CF0343000428495 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0849CEA1CF0343000428495 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0849CEB1CF0343000428495 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0849CEF1CF0343000428495 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0849CF01CF0343000428495 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0849D091CF0343000428495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0849D0A1CF0343000428495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0849D0C1CF0343000428495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34AFE0A22283CCF18BA7DFF6 /* Pods-SBCC Coursewatch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SBCC Coursewatch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-Coursewatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SBCC Coursewatch/SBCC_Coursewatch-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		D0849D0D1CF0343000428495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6D4732D102DF3C2F9137FE /* Pods-SBCC Coursewatch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SBCC Coursewatch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-Coursewatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SBCC Coursewatch/SBCC_Coursewatch-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		D0849D0F1CF0343000428495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEE4FA5BF4ED06D8BFA6CED8 /* Pods-SBCC CoursewatchTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SBCC CoursewatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-CoursewatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SBCC Coursewatch.app/SBCC Coursewatch";
+			};
+			name = Debug;
+		};
+		D0849D101CF0343000428495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0230C57CCAB88936983C18F /* Pods-SBCC CoursewatchTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SBCC CoursewatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-CoursewatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SBCC Coursewatch.app/SBCC Coursewatch";
+			};
+			name = Release;
+		};
+		D0849D121CF0343000428495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970A8CE7540DF5573AA74F2C /* Pods-SBCC CoursewatchUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "SBCC CoursewatchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-CoursewatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SBCC Coursewatch";
+			};
+			name = Debug;
+		};
+		D0849D131CF0343000428495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44449F0EDE116034AAAD86AB /* Pods-SBCC CoursewatchUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "SBCC CoursewatchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-CoursewatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SBCC Coursewatch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0849CDC1CF0342F00428495 /* Build configuration list for PBXProject "SBCC Coursewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0849D091CF0343000428495 /* Debug */,
+				D0849D0A1CF0343000428495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0849D0B1CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC Coursewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0849D0C1CF0343000428495 /* Debug */,
+				D0849D0D1CF0343000428495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0849D0E1CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC CoursewatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0849D0F1CF0343000428495 /* Debug */,
+				D0849D101CF0343000428495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0849D111CF0343000428495 /* Build configuration list for PBXNativeTarget "SBCC CoursewatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0849D121CF0343000428495 /* Debug */,
+				D0849D131CF0343000428495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0849CD91CF0342F00428495 /* Project object */;
+}

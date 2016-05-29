@@ -1,0 +1,15 @@
+PODS:
+  - Buckets (1.2.1)
+  - hpple (0.2.0)
+
+DEPENDENCIES:
+  - Buckets (~> 1.2.0)
+  - hpple
+
+SPEC CHECKSUMS:
+  Buckets: 92a8850454575d86d0de268b8ee08c5fd9821598
+  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+
+PODFILE CHECKSUM: 3a2a600b91630a25da3246f12ad7c06a99b95a78
+
+COCOAPODS: 1.0.0
