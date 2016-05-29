@@ -9,7 +9,7 @@
 import UIKit
 import Buckets
 
-class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     // TODO: Replace picker with table for subjects
     
@@ -32,6 +32,11 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.startAnimating()
+        subjectTable.userInteractionEnabled = false
+        termProgPicker.userInteractionEnabled = false
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,23 +59,25 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func dataLoaded(notification: NSNotification){
         //TODO: Unhide all stuff & reload pickers
-        subjectPicker.reloadAllComponents()
+        subjectTable.reloadData()
         termProgPicker.reloadAllComponents()
-        subjectPicker.selectRow(0, inComponent: 0, animated: true)
+        subjectTable.selectRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0), animated: true, scrollPosition: UITableViewScrollPosition.Top)
+        
+        termProgPicker.userInteractionEnabled = true
+        subjectTable.userInteractionEnabled = true
         loadingIndicator.stopAnimating()
         searchButton.hidden = false
         print("data loaded")
     }
     
     
-    @IBOutlet weak var subjectPicker: UIPickerView!
     @IBOutlet weak var termProgPicker: UIPickerView!
+    @IBOutlet weak var subjectTable: UITableView!
     
+    // MARK: - Picker View Delegate Functions
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         switch pickerView {
-        case self.subjectPicker:
-            return 1
         case self.termProgPicker:
             return 2
         default:
@@ -81,8 +88,6 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         switch pickerView {
-        case self.subjectPicker:
-            return searchData.subjects.count
         case self.termProgPicker:
             if component == 0 {
                 return searchData.terms.count
@@ -97,8 +102,6 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
-        case self.subjectPicker:
-            return searchData.subjects[row]["title"]
         case self.termProgPicker:
             if component == 0 {
                 return searchData.terms[row]["title"]
@@ -113,10 +116,10 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView {
-        case self.subjectPicker:
-            break
         case self.termProgPicker:
+            NSURLSession.sharedSession().invalidateAndCancel()
             searchData.reload(self.url, parameters: searchPageParameters())
+            subjectTable.userInteractionEnabled = false
             loadingIndicator.startAnimating()
             searchButton.hidden = true
         default:
@@ -129,12 +132,60 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 "level": searchData.levels[termProgPicker.selectedRowInComponent(1)]["value"]!]
     }
     
+    // MARK: - TableView Delegate Functions
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchData.subjects.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("subject")
+        cell!.textLabel?.text = searchData.subjects[indexPath.row]["title"]
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            for index in tableView.indexPathsForSelectedRows! {
+                if index.row != 0 {
+                    tableView.deselectRowAtIndexPath(index, animated: false)
+                }
+                
+            }
+            
+        } else {
+            tableView.deselectRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0), animated: false)
+        }
+    }
+    
+    func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if indexPath.row != 0 {
+            if tableView.indexPathsForSelectedRows?.count == 1 {
+                tableView.selectRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.None)
+            }
+            return indexPath
+        } else {
+            return nil
+        }
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        NSURLSession.sharedSession().invalidateAndCancel()
+        
         if segue.identifier == "displayResults" {
             let searchNavController = segue.destinationViewController as! UINavigationController
             let resultsView = searchNavController.topViewController as! ClassListViewController
@@ -160,6 +211,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             postDict.insertValue("CR", forKey: "level")
             postDict.insertValue(searchData.levels[termProgPicker.selectedRowInComponent(1)]["value"]!, forKey: "level")
             
+            
             // MARK: REQUIRED (REPLACEABLE)
             postDict.insertValue("5", forKey: "begin_hh")
             postDict.insertValue("0", forKey: "begin_mi")
@@ -178,7 +230,12 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             // MARK: USER INPUT
             
             
-            postDict.insertValue(searchData.subjects[subjectPicker.selectedRowInComponent(0)]["value"]!, forKey: "sel_subj")
+            
+            
+            for index in self.subjectTable.indexPathsForSelectedRows! {
+                postDict.insertValue(searchData.subjects[index.row]["value"]!, forKey: "sel_subj")
+            }
+            
             postDict.insertValue("%", forKey: "sel_ism")
             postDict.insertValue("%", forKey: "sel_instr")
             

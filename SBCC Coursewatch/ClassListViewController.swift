@@ -20,17 +20,7 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // TODO: Add loading screen
-        
-        
-        loadingIndic.startAnimating()
-        loadingIndic.hidesWhenStopped = true
-        loadingIndic.color = UIColor.blackColor()
-        self.view.addSubview(loadingIndic)
-        loadingIndic.frame = CGRect(origin: self.tableView.bounds.origin, size: self.tableView.bounds.size)
-        searchBar.hidden = true
-        tableView.scrollEnabled = false
+        self.loading()
         
         retrieveSearchResults(self.request)
 
@@ -42,6 +32,7 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
     }
 
     @IBAction func done(sender: AnyObject) {
+        NSURLSession.sharedSession().invalidateAndCancel()
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
@@ -69,22 +60,43 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
             self.results = SearchResults(HTMLData: data!)
             // parse data
             
-            
-            
-            // TODO: Clear loading screen, refresh table
-            self.tableView.reloadData()
-            self.loadingIndic.stopAnimating()
-            self.loadingIndic.hidden = true
-            self.view.willRemoveSubview(self.loadingIndic)
-            self.searchBar.hidden = false
-            self.tableView.scrollEnabled = true
+            self.doneLoading()
             
             }.resume()
     }
     
+    
+    func loading() {
+        // TODO: Add loading screen
+        
+        loadingIndic.startAnimating()
+        loadingIndic.hidesWhenStopped = false
+        loadingIndic.color = UIColor.blackColor()
+//        dispatch_async(dispatch_get_main_queue(), {
+//            self.view.addSubview(self.loadingIndic)
+//            self.loadingIndic.frame = CGRect(origin: self.tableView.bounds.origin, size: self.tableView.bounds.size)
+//
+//        })
+        
+        
+        //searchBar.hidden = true
+        tableView.scrollEnabled = false
+    }
+    
+    @IBAction func fuck(sender: AnyObject) {
+       self.tableView.reloadData()
+    }
+    func doneLoading() {
+        // TODO: Clear loading screen, refresh table
+        self.tableView.reloadData()
+        self.loadingIndic.hidden = true
+        self.tableView.scrollEnabled = true
+        
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if (results == nil) {
-            return 1
+            return 0
         } else {
             return results!.getSubjects().count
         }
@@ -93,7 +105,7 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
      
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (results == nil) {
-            return 1
+            return 0
         } else {
             
             let courses = results!.getCourses(section)

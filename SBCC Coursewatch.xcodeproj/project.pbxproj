@@ -276,6 +276,7 @@
 				TargetAttributes = {
 					D0849CE01CF0343000428495 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 747EALPHEP;
 					};
 					D0849CF61CF0343000428495 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -613,6 +614,7 @@
 			baseConfigurationReference = 34AFE0A22283CCF18BA7DFF6 /* Pods-SBCC Coursewatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "SBCC Coursewatch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-Coursewatch";
@@ -626,6 +628,7 @@
 			baseConfigurationReference = 5E6D4732D102DF3C2F9137FE /* Pods-SBCC Coursewatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "SBCC Coursewatch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.justinoroz.SBCC-Coursewatch";

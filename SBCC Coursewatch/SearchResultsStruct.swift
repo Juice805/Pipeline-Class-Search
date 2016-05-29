@@ -11,7 +11,6 @@ struct SearchResults {
         doc = TFHpple(HTMLData: HTMLData)
         let nodes = pullTextNodes()
         extractData(nodes)
-        
     }
     
     private var doc: TFHpple
