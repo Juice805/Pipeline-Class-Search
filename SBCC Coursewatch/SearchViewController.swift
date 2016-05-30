@@ -20,7 +20,8 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    
     required init?(coder aDecoder: NSCoder) {
         self.searchData = SBCCSearch(html: url)
         super.init(coder: aDecoder)
@@ -32,11 +33,26 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.startAnimating()
-        subjectTable.userInteractionEnabled = false
-        termProgPicker.userInteractionEnabled = false
-
+        print("didLoad")
+        loading()
+    }
+    
+    func loading(done done:Bool = false) {
+        if done {
+            loadingIndicator.stopAnimating()
+            blurView.hidden = true
+            searchButton.enabled = true
+            termProgPicker.userInteractionEnabled = true
+            subjectTable.userInteractionEnabled = true
+            print(done)
+        } else {
+            loadingIndicator.startAnimating()
+            blurView.hidden = false
+            searchButton.enabled = false
+            termProgPicker.userInteractionEnabled = false
+            subjectTable.userInteractionEnabled = false
+            print(done)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,15 +75,15 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func dataLoaded(notification: NSNotification){
         //TODO: Unhide all stuff & reload pickers
-        subjectTable.reloadData()
-        termProgPicker.reloadAllComponents()
-        subjectTable.selectRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0), animated: true, scrollPosition: UITableViewScrollPosition.Top)
         
-        termProgPicker.userInteractionEnabled = true
-        subjectTable.userInteractionEnabled = true
-        loadingIndicator.stopAnimating()
-        searchButton.hidden = false
-        print("data loaded")
+        dispatch_async(dispatch_get_main_queue(), {
+            self.subjectTable.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
+            self.termProgPicker.reloadAllComponents()
+            self.subjectTable.selectRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0), animated: true, scrollPosition: UITableViewScrollPosition.None)
+            
+            self.loading(done: true)
+            print("data loaded")
+        })
     }
     
     
@@ -119,9 +135,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case self.termProgPicker:
             NSURLSession.sharedSession().invalidateAndCancel()
             searchData.reload(self.url, parameters: searchPageParameters())
-            subjectTable.userInteractionEnabled = false
-            loadingIndicator.startAnimating()
-            searchButton.hidden = true
+            loading()
         default:
             break
         }

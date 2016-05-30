@@ -70,27 +70,26 @@ class ClassListViewController: UITableViewController, UISearchBarDelegate {
         // TODO: Add loading screen
         
         loadingIndic.startAnimating()
-        loadingIndic.hidesWhenStopped = false
+        loadingIndic.hidesWhenStopped = true
         loadingIndic.color = UIColor.blackColor()
-//        dispatch_async(dispatch_get_main_queue(), {
-//            self.view.addSubview(self.loadingIndic)
-//            self.loadingIndic.frame = CGRect(origin: self.tableView.bounds.origin, size: self.tableView.bounds.size)
-//
-//        })
-        
-        
-        //searchBar.hidden = true
+        self.view.addSubview(self.loadingIndic)
+        self.loadingIndic.frame = self.view.frame
+        self.loadingIndic.bounds.origin.y = self.view.bounds.origin.y + (self.view.bounds.height * 0.3)
+
+        searchBar.hidden = true
         tableView.scrollEnabled = false
     }
     
-    @IBAction func fuck(sender: AnyObject) {
-       self.tableView.reloadData()
-    }
     func doneLoading() {
         // TODO: Clear loading screen, refresh table
-        self.tableView.reloadData()
-        self.loadingIndic.hidden = true
-        self.tableView.scrollEnabled = true
+        
+        dispatch_async(dispatch_get_main_queue(), {
+
+            self.tableView.reloadData()
+            self.searchBar.hidden = false
+            self.loadingIndic.stopAnimating()
+            self.tableView.scrollEnabled = true
+        })
         
     }
     
